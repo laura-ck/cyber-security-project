@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Admin Profile</title>
+</head>
+<body>
+    <h1>Profile of {{ admin_user.username }}</h1>
+    <p>Email: {{ admin_user.email }}</p>
+    <h2>Recent Log Entries</h2>
+    <ul>
+        {% for entry in log_entries %}
+        <li>{{ entry }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

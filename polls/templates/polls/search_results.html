@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+    {% endif %}
+    <ul>
+        {% for question in questions %}
+            <li>{{ question.question_text }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
