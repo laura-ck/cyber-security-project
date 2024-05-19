@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name"><a href="{% url 'admin:index' %}">Polls Administration</a></h1>
+{% endblock %}
+
+#Cryptographic failure: sensitive data exposure, visible through developper tools -> Sources -> admin -> login -> admin/
+#Fix: Credentials should never be hard-coded, remove this block of code: % block extrahead % ... % endblock %
+{% block extrahead %}
+    <script>
+        'username', 'admi'
+        'password', '123'
+    </script>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
